@@ -10,49 +10,48 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import prajwal.rentTrack.entity.Car;
-import prajwal.rentTrack.service.CarService;
+import prajwal.rentTrack.entity.Reading;
+import prajwal.rentTrack.service.ReadingService;
 
 @RestController
 @ResponseBody
-public class CarController 
+public class ReadingController
 {
 	@Autowired
-	CarService cs;
+	ReadingService rs;
 
 	@RequestMapping(method=RequestMethod.GET, value="/cars")
 	//find all vehicles
-	public List<Car> getAll()
+	public List<Reading> getAll()
 	{
-		return cs.getAll();
+		return rs.getAll();
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/cars/{vid}")
 	// find vehicle by id
-	public Car getByVid(@PathVariable("vid") String id)
+	public Reading getByVid(@PathVariable("vid") String id)
 	{
-		return cs.getByVid(id);
+		return rs.getByVid(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/cars")
 	// add vehicle in db
-	public Car addCar(@RequestBody Car c)
+	public Reading addReading(@RequestBody Reading c)
 	{
-		return cs.addCar(c);
+		return rs.addReading(c);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/cars/{vid}")
 	// update vehicle in db
-	public Car updateCar(@PathVariable("vid") String id, @RequestBody Car c)
+	public Reading updateReading(@PathVariable("vid") String id, @RequestBody Reading c)
 	{
-		return cs.updateCar(id, c);
+		return rs.updateReading(id, c);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/cars/{vid}")
 	// remove vehicle data
-	public void deleteCar(@PathVariable("vid") String id)
+	public void deleteReading(@PathVariable("vid") String id)
 	{
-		cs.deleteCar(id);
+		rs.deleteReading(id);
 	}
-	
 }
