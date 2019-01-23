@@ -10,7 +10,7 @@ public class Car
 @Id
 String vid;
 
-String make;
+String make; 
 String model;
 int year;
 int redlineRpm;
@@ -60,5 +60,13 @@ public String getLastServiceDate() {
 public void setLastServiceDate(String lastServiceDate) {
 	this.lastServiceDate = lastServiceDate;
 }
+@Override
+public String toString() {
+	return "Car [vid=" + vid + ", make=" + make + ", model=" + model + ", year=" + year + ", redlineRpm=" + redlineRpm
+			+ ", maxFuelVolume=" + maxFuelVolume + ", lastServiceDate=" + lastServiceDate + "]";
+}
+
+
+
 
 }

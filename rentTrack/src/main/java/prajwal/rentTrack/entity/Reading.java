@@ -2,10 +2,12 @@ package prajwal.rentTrack.entity;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Reading 
 {
+@Id
 String vin;
 
 double latitude;

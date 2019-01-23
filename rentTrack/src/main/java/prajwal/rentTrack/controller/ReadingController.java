@@ -14,41 +14,41 @@ import prajwal.rentTrack.entity.Reading;
 import prajwal.rentTrack.service.ReadingService;
 
 @RestController
-@ResponseBody
+//@ResponseBody
 public class ReadingController
 {
 	@Autowired
 	ReadingService rs;
 
-	@RequestMapping(method=RequestMethod.GET, value="/cars")
+	@RequestMapping(method=RequestMethod.GET, value="/readings")
 	//find all vehicles
 	public List<Reading> getAll()
 	{
 		return rs.getAll();
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/cars/{vid}")
+	@RequestMapping(method=RequestMethod.GET, value="/readings/{vid}")
 	// find vehicle by id
 	public Reading getByVid(@PathVariable("vid") String id)
 	{
 		return rs.getByVid(id);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/cars")
+	@RequestMapping(method=RequestMethod.POST, value="/readings")
 	// add vehicle in db
 	public Reading addReading(@RequestBody Reading c)
 	{
 		return rs.addReading(c);
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/cars/{vid}")
+	@RequestMapping(method=RequestMethod.PUT, value="/readings/{vid}")
 	// update vehicle in db
 	public Reading updateReading(@PathVariable("vid") String id, @RequestBody Reading c)
 	{
 		return rs.updateReading(id, c);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/cars/{vid}")
+	@RequestMapping(method=RequestMethod.DELETE, value="/readings/{vid}")
 	// remove vehicle data
 	public void deleteReading(@PathVariable("vid") String id)
 	{

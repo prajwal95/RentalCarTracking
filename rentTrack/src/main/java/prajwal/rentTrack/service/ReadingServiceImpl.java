@@ -2,8 +2,11 @@ package prajwal.rentTrack.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import prajwal.rentTrack.entity.Reading;
 
+@Service
 public class ReadingServiceImpl implements ReadingService
 {
 
